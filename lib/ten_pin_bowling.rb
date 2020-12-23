@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "ten_pin_bowling/version"
+require "ten_pin_bowling/parser"
 
 module TenPinBowling
   class Error < StandardError; end
@@ -21,7 +22,7 @@ module TenPinBowling
         TenPinBowling - A CLI for Ten Pin Bowling score processing!."
         ------------------------------"
         Usage:
-          bundle exec exe/ten_pin_bowling < input.txt
+          bundle exec exe/ten_pin_bowling input.txt
       HEREDOC
     end
   end
