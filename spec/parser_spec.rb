@@ -6,7 +6,7 @@ RSpec.describe TenPinBowling::Parser do
       file = fixture_path("sample_input.txt")
 
       expect(TenPinBowling::Parser.parse_file(file)).to eq(
-        { "Jeff" => [[10], [7, 3], [9, 0], [10], [0, 8], [8, 2], [0, 6], [10], [10], [10, 8, 1]],
+        { "Jeff" => [[10], [7, 3], [9, 0], [10], [0, 8], [8, 2], ["F", 6], [10], [10], [10, 8, 1]],
           "John" => [[3, 7], [6, 3], [10], [8, 1], [10], [10], [9, 0], [7, 3], [4, 4], [10, 9, 0]] }
       )
     end
