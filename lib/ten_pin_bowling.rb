@@ -2,6 +2,7 @@
 
 require_relative "ten_pin_bowling/version"
 require "ten_pin_bowling/parser"
+require "ten_pin_bowling/process_score"
 
 module TenPinBowling
   class Error < StandardError; end
