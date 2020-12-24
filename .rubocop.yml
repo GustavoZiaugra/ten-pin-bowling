@@ -1,13 +1,185 @@
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+Metrics:
+  Enabled: false
 
+Style/BarePercentLiterals:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ClassCheck:
+  Enabled: false
+Style/ClassVars:
+  Enabled: false
+Style/ColonMethodCall:
+  Enabled: false
+Style/CommandLiteral:
+  Enabled: false
+Style/CommentedKeyword:
+  Enabled: false
+Style/ConditionalAssignment:
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
+Style/EmptyLambdaParameter:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/HashSyntax:
+  Enabled: false
+Style/IdenticalConditionalBranches:
+  Enabled: false
+Style/InfiniteLoop:
+  Enabled: false
+Style/IfInsideElse:
+  Enabled: false
+Style/IfUnlessModifierOfIfUnless:
+  Enabled: false
+Style/InverseMethods:
+  Enabled: false
+Style/FormatStringToken:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Include:
+  - lib/**/*.rb
+Style/PreferredHashMethods:
+  Enabled: false
+Style/Proc:
+  Enabled: false
+Style/MultipleComparison:
+  Enabled: false
+Style/MultilineIfModifier:
+  Enabled: false
+Style/Next:
+  Enabled: false
+Style/NonNilCheck:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/NumericLiteralPrefix:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/RedundantBegin:
+  Enabled: false
+Style/RedundantSelf:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false
+Style/RescueModifier:
+  Enabled: false
+Style/SafeNavigation:
+  Enabled: false
+Style/SelfAssignment:
+  Enabled: false
 Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/SymbolLiteral:
+  Enabled: false
+Style/SymbolProc:
+  Enabled: false
+Style/TernaryParentheses:
+  Enabled: false
+Style/TrivialAccessors:
+  Enabled: false
+Style/UnlessElse:
+  Enabled: false
+Style/RedundantInterpolation:
+  Enabled: false
+Style/RedundantPercentQ:
+  Enabled: false
+Style/YodaCondition:
+  Enabled: false
+Style/ZeroLengthPredicate:
+  Enabled: false
 
-Layout/LineLength:
-  Max: 120
+Layout/ArrayAlignment:
+  Enabled: false
+Layout/ParameterAlignment:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+Layout/ExtraSpacing:
+  Enabled: false
+Layout/FirstParameterIndentation:
+  Enabled: false
+Layout/FirstArrayElementIndentation:
+  Enabled: false
+Layout/FirstHashElementIndentation:
+  Enabled: false
+Layout/HeredocIndentation:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Layout/SpaceAroundKeyword:
+  Enabled: false
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Lint/DuplicateMethods:
+  Enabled: false
+Lint/LiteralAsCondition:
+  Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
+Lint/UnusedBlockArgument:
+  Enabled: false
+Lint/UnusedMethodArgument:
+  Enabled: false
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+Lint/RedundantStringCoercion:
+  Enabled: false
+Lint/MultipleComparison:
+  Enabled: false
+Lint/MissingCopEnableDirective:
+  Enabled: false
+Lint/NestedMethodDefinition:
+  Enabled: false
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+Lint/Void:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/ConstantName:
+  Enabled: false
+Naming/MethodName:
+  Enabled: false
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Naming/MethodParameterName:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Naming/VariableName:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Security/JSONLoad:
+  Enabled: false
+Security/YAMLLoad:
+  Enabled: false
 
 AllCops:
+  SuggestExtensions: false
   TargetRubyVersion: 2.7.1
+  Exclude:
+  - log/*
+  - tmp/*
+  - coverage/*
+  - dump.rdb
+  - .DS_Store
+  - .byebug_history

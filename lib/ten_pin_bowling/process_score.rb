@@ -10,7 +10,7 @@ module TenPinBowling
         apply_score(parsed_file, player, game_result)
       end
 
-      final_result.values.each do |rounds|
+      final_result.each_value do |rounds|
         rounds.each_with_index do |round, index|
           next if first_round?(index)
 
@@ -48,11 +48,11 @@ module TenPinBowling
     end
 
     def self.build_hash(round, score)
-      { "pins" => round, "score" => score }
+      { 'pins' => round, 'score' => score }
     end
 
     def self.aggregate_score(frames, frame, frame_index)
-      frame["score"] += frames[frame_index - 1]["score"]
+      frame['score'] += frames[frame_index - 1]['score']
     end
 
     def self.round_score(round)

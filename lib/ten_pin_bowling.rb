@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "ten_pin_bowling/version"
-require "ten_pin_bowling/parser"
-require "ten_pin_bowling/process_score"
+require_relative 'ten_pin_bowling/version'
+require 'ten_pin_bowling/parser'
+require 'ten_pin_bowling/process_score'
 
 module TenPinBowling
   class Error < StandardError; end
@@ -10,7 +10,7 @@ module TenPinBowling
   # Class responsible to handle the input args from this CLI
   class CLI
     def main(argv)
-      if argv.length.zero? || (argv[0] == "--help") || (argv[0] == "-h")
+      if argv.length.zero? || (argv[0] == '--help') || (argv[0] == '-h')
         help
       else
         game_file_path = argv[0]
