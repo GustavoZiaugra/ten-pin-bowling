@@ -44,5 +44,17 @@ RSpec.describe TenPinBowling::ProcessScore do
            { 'pins' => [0, 0, 0], 'score' => 0 }] }
       )
     end
+
+    it 'should return a hash with all infos from the rounds and the aggregated score by round (fouls score file)' do
+      input = { 'Carl' => [["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F", "F"]] }
+
+      expect(TenPinBowling::ProcessScore.process(input)).to eq(
+        { 'Carl' =>
+          [{ 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
+           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
+           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
+           { 'pins' => ["F", "F", "F"], 'score' => 0 }] }
+      )
+    end
   end
 end

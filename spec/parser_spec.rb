@@ -26,5 +26,13 @@ RSpec.describe TenPinBowling::Parser do
         { 'Carl' => [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0, 0]] }
       )
     end
+
+    it 'should return a parsed file into a hash structure with a foul score match input file' do
+      file = fixture_path('fouls_match.txt')
+
+      expect(TenPinBowling::Parser.parse_file(file)).to eq(
+        { 'Carl' => [["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F", "F"]] }
+      )
+    end
   end
 end

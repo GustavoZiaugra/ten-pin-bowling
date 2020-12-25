@@ -41,5 +41,19 @@ RSpec.describe TenPinBowling::Runner do
 
       expect(result).to eq(expected_output)
     end
+
+    it 'should print the result of a fully match at the end (fouls score file)' do
+      file = fixture_path('fouls_match.txt')
+
+      result = capture_stream($stdout) { TenPinBowling::Runner.run(file) }
+
+      # rubocop:disable Layout/LineLength
+      expected_output =
+        "Frame\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t\nCarl\nPinfalls\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F  F  \nScore\t\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t\n"
+      # rubocop:enable Layout/LineLength
+
+      expect(result).to eq(expected_output)
+    end
+
   end
 end

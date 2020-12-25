@@ -60,5 +60,24 @@ RSpec.describe TenPinBowling::Printer do
 
       expect(expected_output).to eq(result)
     end
+
+    it 'should return the outputed game to the screen into the perfect format(fouls score match)' do
+      input =
+        { 'Carl' =>
+          [{ 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
+           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
+           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
+           { 'pins' => ["F", "F", "F"], 'score' => 0 }] }
+
+      result = capture_stream($stdout) { TenPinBowling::Printer.print(input) }
+
+      # rubocop:disable Layout/LineLength
+      expected_output =
+         "Frame\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t\nCarl\nPinfalls\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F  F  \nScore\t\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t\n"
+      # rubocop:enable Layout/LineLength
+
+      expect(expected_output).to eq(result)
+    end
+
   end
 end
