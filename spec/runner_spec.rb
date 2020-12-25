@@ -54,6 +54,5 @@ RSpec.describe TenPinBowling::Runner do
 
       expect(result).to eq(expected_output)
     end
-
   end
 end

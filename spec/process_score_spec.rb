@@ -26,10 +26,10 @@ RSpec.describe TenPinBowling::ProcessScore do
 
       expect(TenPinBowling::ProcessScore.process(input)).to eq(
         { 'Carl' =>
-          [{ 'pins' => [10], 'score' => 30 }, { 'pins' => [10], 'score' => 60 }, { 'pins' => [10], 'score' => 90 },
-           { 'pins' => [10], 'score' => 120 }, { 'pins' => [10], 'score' => 150 }, { 'pins' => [10], 'score' => 180 },
-           { 'pins' => [10], 'score' => 210 }, { 'pins' => [10], 'score' => 240 }, { 'pins' => [10], 'score' => 270 },
-           { 'pins' => [10, 10, 10], 'score' => 300 }] }
+        [{ 'pins' => [10], 'score' => 30 }, { 'pins' => [10], 'score' => 60 }, { 'pins' => [10], 'score' => 90 },
+        { 'pins' => [10], 'score' => 120 }, { 'pins' => [10], 'score' => 150 }, { 'pins' => [10], 'score' => 180 },
+        { 'pins' => [10], 'score' => 210 }, { 'pins' => [10], 'score' => 240 }, { 'pins' => [10], 'score' => 270 },
+        { 'pins' => [10, 10, 10], 'score' => 300 }] }
       )
     end
 
@@ -38,22 +38,23 @@ RSpec.describe TenPinBowling::ProcessScore do
 
       expect(TenPinBowling::ProcessScore.process(input)).to eq(
         { 'Carl' =>
-          [{ 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
-           { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
-           { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
-           { 'pins' => [0, 0, 0], 'score' => 0 }] }
+        [{ 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
+        { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
+        { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
+        { 'pins' => [0, 0, 0], 'score' => 0 }] }
       )
     end
 
     it 'should return a hash with all infos from the rounds and the aggregated score by round (fouls score match)' do
-      input = { 'Carl' => [["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F", "F"]] }
+      input = { 'Carl' => [%w[F F], %w[F F], %w[F F], %w[F F], %w[F F], %w[F F], %w[F F],
+%w[F F], %w[F F], %w[F F F]] }
 
       expect(TenPinBowling::ProcessScore.process(input)).to eq(
         { 'Carl' =>
-          [{ 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
-           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
-           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
-           { 'pins' => ["F", "F", "F"], 'score' => 0 }] }
+        [{ 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 },
+        { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 },
+        { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 },
+        { 'pins' => %w[F F F], 'score' => 0 }] }
       )
     end
   end

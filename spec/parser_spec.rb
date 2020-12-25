@@ -31,7 +31,8 @@ RSpec.describe TenPinBowling::Parser do
       file = fixture_path('fouls_match.txt')
 
       expect(TenPinBowling::Parser.parse_file(file)).to eq(
-        { 'Carl' => [["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F", "F"]] }
+        { 'Carl' => [%w[F F], %w[F F], %w[F F], %w[F F], %w[F F], %w[F F], %w[F F], %w[F F],
+%w[F F], %w[F F F]] }
       )
     end
   end

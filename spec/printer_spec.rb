@@ -28,10 +28,10 @@ RSpec.describe TenPinBowling::Printer do
     it 'should return the outputed game to the screen into the perfect format(perfect match)' do
       input =
         { 'Carl' =>
-          [{ 'pins' => [10], 'score' => 30 }, { 'pins' => [10], 'score' => 60 }, { 'pins' => [10], 'score' => 90 },
-           { 'pins' => [10], 'score' => 120 }, { 'pins' => [10], 'score' => 150 }, { 'pins' => [10], 'score' => 180 },
-           { 'pins' => [10], 'score' => 210 }, { 'pins' => [10], 'score' => 240 }, { 'pins' => [10], 'score' => 270 },
-           { 'pins' => [10, 10, 10], 'score' => 300 }] }
+        [{ 'pins' => [10], 'score' => 30 }, { 'pins' => [10], 'score' => 60 }, { 'pins' => [10], 'score' => 90 },
+        { 'pins' => [10], 'score' => 120 }, { 'pins' => [10], 'score' => 150 }, { 'pins' => [10], 'score' => 180 },
+        { 'pins' => [10], 'score' => 210 }, { 'pins' => [10], 'score' => 240 }, { 'pins' => [10], 'score' => 270 },
+        { 'pins' => [10, 10, 10], 'score' => 300 }] }
 
       result = capture_stream($stdout) { TenPinBowling::Printer.print(input) }
 
@@ -46,10 +46,10 @@ RSpec.describe TenPinBowling::Printer do
     it 'should return the outputed game to the screen into the perfect format(zero score match)' do
       input =
         { 'Carl' =>
-          [{ 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
-           { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
-           { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
-           { 'pins' => [0, 0, 0], 'score' => 0 }] }
+        [{ 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
+        { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
+        { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 }, { 'pins' => [0, 0], 'score' => 0 },
+        { 'pins' => [0, 0, 0], 'score' => 0 }] }
 
       result = capture_stream($stdout) { TenPinBowling::Printer.print(input) }
 
@@ -64,20 +64,19 @@ RSpec.describe TenPinBowling::Printer do
     it 'should return the outputed game to the screen into the perfect format(fouls score match)' do
       input =
         { 'Carl' =>
-          [{ 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
-           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
-           { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 }, { 'pins' => ["F", "F"], 'score' => 0 },
-           { 'pins' => ["F", "F", "F"], 'score' => 0 }] }
+        [{ 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 },
+        { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 },
+        { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 }, { 'pins' => %w[F F], 'score' => 0 },
+        { 'pins' => %w[F F F], 'score' => 0 }] }
 
       result = capture_stream($stdout) { TenPinBowling::Printer.print(input) }
 
       # rubocop:disable Layout/LineLength
       expected_output =
-         "Frame\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t\nCarl\nPinfalls\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F  F  \nScore\t\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t\n"
+        "Frame\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t\nCarl\nPinfalls\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F\tF  F  F  \nScore\t\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t\n"
       # rubocop:enable Layout/LineLength
 
       expect(expected_output).to eq(result)
     end
-
   end
 end
