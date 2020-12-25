@@ -1,11 +1,6 @@
 # frozen_string_literal: true
 
 module TenPinBowling
-  STRIKE_VALUE = 10
-  MAX_ROUNDS = 10
-  NON_FINAL_ROUND_MAX_PLAYS = 2
-  VALID_PINS_SCORES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'F'].freeze
-
   # This class is responsible to parse our input file to a struct.
   class Parser
     def self.parse_file(file_path)
