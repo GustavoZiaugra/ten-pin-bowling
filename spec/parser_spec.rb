@@ -2,8 +2,8 @@
 
 RSpec.describe TenPinBowling::Parser do
   describe '#parse_file' do
-    it 'should return a parsed file into a hash structure with a sample input file' do
-      file = fixture_path('sample_input.txt')
+    it 'should return a parsed file into a hash structure (sample match)' do
+      file = fixture_path('sample_match.txt')
 
       expect(TenPinBowling::Parser.parse_file(file)).to eq(
         { 'Jeff' => [[10], [7, 3], [9, 0], [10], [0, 8], [8, 2], ['F', 6], [10], [10], [10, 8, 1]],
@@ -11,7 +11,7 @@ RSpec.describe TenPinBowling::Parser do
       )
     end
 
-    it 'should return a parsed file into a hash structure with a perfect match input file' do
+    it 'should return a parsed file into a hash structure (perfect match)' do
       file = fixture_path('perfect_match.txt')
 
       expect(TenPinBowling::Parser.parse_file(file)).to eq(
@@ -19,7 +19,7 @@ RSpec.describe TenPinBowling::Parser do
       )
     end
 
-    it 'should return a parsed file into a hash structure with a zero score match input file' do
+    it 'should return a parsed file into a hash structure (zero score match)' do
       file = fixture_path('zero_score_match.txt')
 
       expect(TenPinBowling::Parser.parse_file(file)).to eq(
@@ -27,7 +27,7 @@ RSpec.describe TenPinBowling::Parser do
       )
     end
 
-    it 'should return a parsed file into a hash structure with a foul score match input file' do
+    it 'should return a parsed file into a hash structure (fouls score match)' do
       file = fixture_path('fouls_match.txt')
 
       expect(TenPinBowling::Parser.parse_file(file)).to eq(

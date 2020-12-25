@@ -2,8 +2,8 @@
 
 RSpec.describe TenPinBowling::Runner do
   describe '#run' do
-    it 'should print the result of a fully match at the end (sample file)' do
-      file = fixture_path('sample_input.txt')
+    it 'should print the result of a fully match at the end (sample match)' do
+      file = fixture_path('sample_match.txt')
 
       result = capture_stream($stdout) { TenPinBowling::Runner.run(file) }
 
@@ -16,7 +16,7 @@ RSpec.describe TenPinBowling::Runner do
       expect(result).to eq(expected_output)
     end
 
-    it 'should print the result of a fully match at the end (perfect file)' do
+    it 'should print the result of a fully match at the end (perfect match)' do
       file = fixture_path('perfect_match.txt')
 
       result = capture_stream($stdout) { TenPinBowling::Runner.run(file) }
@@ -29,7 +29,7 @@ RSpec.describe TenPinBowling::Runner do
       expect(result).to eq(expected_output)
     end
 
-    it 'should print the result of a fully match at the end (zero score file)' do
+    it 'should print the result of a fully match at the end (zero score match)' do
       file = fixture_path('zero_score_match.txt')
 
       result = capture_stream($stdout) { TenPinBowling::Runner.run(file) }
@@ -42,7 +42,7 @@ RSpec.describe TenPinBowling::Runner do
       expect(result).to eq(expected_output)
     end
 
-    it 'should print the result of a fully match at the end (fouls score file)' do
+    it 'should print the result of a fully match at the end (fouls score match)' do
       file = fixture_path('fouls_match.txt')
 
       result = capture_stream($stdout) { TenPinBowling::Runner.run(file) }

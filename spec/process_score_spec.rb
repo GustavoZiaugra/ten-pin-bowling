@@ -2,7 +2,7 @@
 
 RSpec.describe TenPinBowling::ProcessScore do
   describe '#process' do
-    it 'should return a hash with all infos from the rounds and the aggregated score by round (sample file)' do
+    it 'should return a hash with all infos from the rounds and the aggregated score by round (sample match)' do
       input = { 'Jeff' => [[10], [7, 3], [9, 0], [10], [0, 8], [8, 2], ['F', 6], [10], [10], [10, 8, 1]],
                 'John' => [[3, 7], [6, 3], [10], [8, 1], [10], [10], [9, 0], [7, 3], [4, 4], [10, 9, 0]] }
 
@@ -21,7 +21,7 @@ RSpec.describe TenPinBowling::ProcessScore do
       )
     end
 
-    it 'should return a hash with all infos from the rounds and the aggregated score by round (perfect match file)' do
+    it 'should return a hash with all infos from the rounds and the aggregated score by round (perfect match)' do
       input = { 'Carl' => [[10], [10], [10], [10], [10], [10], [10], [10], [10], [10, 10, 10]] }
 
       expect(TenPinBowling::ProcessScore.process(input)).to eq(
@@ -33,7 +33,7 @@ RSpec.describe TenPinBowling::ProcessScore do
       )
     end
 
-    it 'should return a hash with all infos from the rounds and the aggregated score by round (zero score file)' do
+    it 'should return a hash with all infos from the rounds and the aggregated score by round (zero score match)' do
       input = { 'Carl' => [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0, 0]] }
 
       expect(TenPinBowling::ProcessScore.process(input)).to eq(
@@ -45,7 +45,7 @@ RSpec.describe TenPinBowling::ProcessScore do
       )
     end
 
-    it 'should return a hash with all infos from the rounds and the aggregated score by round (fouls score file)' do
+    it 'should return a hash with all infos from the rounds and the aggregated score by round (fouls score match)' do
       input = { 'Carl' => [["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F"], ["F", "F", "F"]] }
 
       expect(TenPinBowling::ProcessScore.process(input)).to eq(

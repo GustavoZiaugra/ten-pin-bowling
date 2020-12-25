@@ -18,7 +18,7 @@ RSpec.describe TenPinBowling::CLI do
     end
 
     it 'should print the result of a fully match at the end' do
-      file = fixture_path('sample_input.txt')
+      file = fixture_path('sample_match.txt')
 
       result = capture_stream($stdout) { TenPinBowling::CLI.new.main([file]) }
 
