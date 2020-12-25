@@ -39,7 +39,7 @@ RSpec.describe TenPinBowling::Printer do
       expected_output =
         "Frame\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t\nCarl\nPinfalls\t   X\t   X\t   X\t   X\t   X\t   X\t   X\t   X\t   X\tX  X  X  \nScore\t\t30\t60\t90\t120\t150\t180\t210\t240\t270\t300\t\n"
       # rubocop:enable Layout/LineLength
-      #
+
       expect(expected_output).to eq(result)
     end
 
