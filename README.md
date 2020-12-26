@@ -1,28 +1,29 @@
+[![Coverage Status](https://coveralls.io/repos/github/GustavoZiaugra/ten-pin-bowling/badge.svg)](https://coveralls.io/github/GustavoZiaugra/ten-pin-bowling) ![Ruby](https://github.com/GustavoZiaugra/ten-pin-bowling/workflows/Ruby/badge.svg?branch=master)
+
 # TenPinBowling
+Ten-pin bowling is a type of bowling in which a bowler rolls a bowling ball down a wood or synthetic lane toward ten pins positioned evenly in four rows in an equilateral triangle at the far end of the lane. The objective is to knock down all ten pins on the first roll of the ball (a strike), or failing that, on the second roll (a spare).
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ten_pin_bowling`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The aim of the library is to provide the result of a match involving n players with a limit of 10 rounds from the entry of a file.
 
 ## Installation
+You will need:
+- Ruby 2.7.1 -> [Installation Guide](https://www.ruby-lang.org/pt/documentation/installation/)
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'ten_pin_bowling'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install ten_pin_bowling
+Than run inside the folder:
+- `bundle install`
 
 ## Usage
 
-TODO: Write usage instructions here
+You can run this following command from the folder:
+`bundle exec exe/ten_pin_bowling --help`
+It will return a message explain how to use the script:
+```
+TenPinBowling - A CLI for Ten Pin Bowling score processing!"
+------------------------------"
+Usage:
+  bundle exec exe/ten_pin_bowling input.txt
+```
+
 
 ## Development
 
@@ -32,7 +33,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ten_pin_bowling.
+Bug reports and pull requests are welcome on GitHub at https://github.com/GustavoZiaugra/ten_pin_bowling.
 
 ## License
 
