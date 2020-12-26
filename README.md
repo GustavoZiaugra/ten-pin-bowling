@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/GustavoZiaugra/ten-pin-bowling/badge.svg)](https://coveralls.io/github/GustavoZiaugra/ten-pin-bowling) ![Ruby](https://github.com/GustavoZiaugra/ten-pin-bowling/workflows/Ruby/badge.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/GustavoZiaugra/ten-pin-bowling/badge.svg)](https://coveralls.io/github/GustavoZiaugra/ten-pin-bowling) [![Maintainability](https://api.codeclimate.com/v1/badges/d7e5bc0d23eff4cca9cc/maintainability)](https://codeclimate.com/github/GustavoZiaugra/ten-pin-bowling/maintainability) ![Ruby](https://github.com/GustavoZiaugra/ten-pin-bowling/workflows/Ruby/badge.svg?branch=master)
 
 # TenPinBowling
 Ten-pin bowling is a type of bowling in which a bowler rolls a bowling ball down a wood or synthetic lane toward ten pins positioned evenly in four rows in an equilateral triangle at the far end of the lane. The objective is to knock down all ten pins on the first roll of the ball (a strike), or failing that, on the second roll (a spare).
