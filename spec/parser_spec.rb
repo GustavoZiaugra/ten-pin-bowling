@@ -35,5 +35,29 @@ RSpec.describe TenPinBowling::Parser do
 %w[F F], %w[F F F]] }
       )
     end
+
+    it 'should raise ArgumentError when file dont follow the format (2 fields per line)' do
+      file = fixture_path('3_fields_per_line.txt')
+
+      expect do
+        TenPinBowling::Parser.parse_file(file)
+      end.to raise_error(ArgumentError,
+                         'Line has more than two fields! Line: Jeff 10 1')
+    end
+
+    it 'should raise ArgumentError when file contains a invalid value for the pins' do
+      file = fixture_path('invalid_pin_value.txt')
+
+      expect { TenPinBowling::Parser.parse_file(file) }.to raise_error(ArgumentError, 'Pin value is invalid!: Z')
+    end
+
+    it 'should raise ArgumentError when file contains more than 10 rounds' do
+      file = fixture_path('more_than_10_rounds.txt')
+
+      expect do
+        TenPinBowling::Parser.parse_file(file)
+      end.to raise_error(ArgumentError,
+                         'The maximum amount of rounds to be processed is 10. Please review your input file')
+    end
   end
 end

@@ -45,7 +45,7 @@ module TenPinBowling
       [[pins[0], pins[1]], [pins[1], pins[2]]].each do |pin_pair|
         if ProcessScore.strike?(pin_pair[1])
           output += 'X  '
-        elsif pin_pair[0].to_i + pin_pair[1].to_i == STRIKE_VALUE
+        elsif spare?(pin_pair)
           output += '/  '
         else
           output += "#{pin_pair[1].to_s}  "
@@ -55,6 +55,10 @@ module TenPinBowling
       output
     end
 
-    private_class_method :print_header, :print_result
+    def self.spare?(pins)
+      pins[0].to_i + pins[1].to_i == STRIKE_VALUE
+    end
+
+    private_class_method :print_header, :print_result, :build_last_round, :spare?
   end
 end

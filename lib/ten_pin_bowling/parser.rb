@@ -6,15 +6,16 @@ module TenPinBowling
     def self.parse_file(file_path)
       data_file = File.readlines(file_path).map(&:split)
       data_file.each_with_object(Hash.new { |hash, key| hash[key] = [] }) do |data, round|
+        validate_line_format!(data)
         player = data[0]
         pins = parse_pins(data[1])
+        validate_pins_score!(pins)
         parse_round(player, pins, round)
       end
     end
 
     def self.parse_round(player, pins, round)
-      return unless valid_pins_score?(pins)
-
+      validate_max_round!(round[player])
       if round[player].empty?
         round[player] << [pins]
       elsif round[player].count == MAX_ROUNDS
@@ -33,14 +34,25 @@ module TenPinBowling
       end
     end
 
-    def self.valid_pins_score?(pins)
-      VALID_PINS_SCORES.include?(pins)
-    end
-
     def self.parse_pins(pins)
-      pins == 'F' ? pins : pins.to_i
+      pins.match?(/[[:alpha:]]/) ? pins : pins.to_i
     end
 
-    private_class_method :parse_round, :assign_round, :valid_pins_score?, :parse_pins
+    def self.validate_max_round!(round)
+      if round.count == MAX_ROUNDS && round.last.count == 3
+        raise ArgumentError,
+              "The maximum amount of rounds to be processed is #{MAX_ROUNDS}. Please review your input file"
+      end
+    end
+
+    def self.validate_pins_score!(pins)
+      raise ArgumentError, "Pin value is invalid!: #{pins}" unless VALID_PINS_SCORES.include?(pins)
+    end
+
+    def self.validate_line_format!(line)
+      raise ArgumentError, "Line has more than two fields! Line: #{line.join(" ")}" if line.length > 2
+    end
+
+    private_class_method :parse_round, :assign_round, :validate_line_format!, :validate_pins_score!, :parse_pins
   end
 end
