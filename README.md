@@ -12,6 +12,13 @@ You will need:
 Than run inside the folder:
 - `bundle install`
 
+### With Docker
+You will need:
+- Docker -> [Installation Guide](https://docs.docker.com/get-docker/)
+
+Then run inside the folder:
+- `docker run -it $(docker build -q .) bash`
+
 ## Usage
 
 You can run this following command from the folder:
