@@ -27,7 +27,7 @@ module TenPinBowling
 
     def self.assign_round(player, round, pins)
       last_round = round[player].last
-      if last_round.count == NON_FINAL_ROUND_MAX_PLAYS || last_round.first == STRIKE_VALUE
+      if last_round.count == NON_FINAL_ROUND_MAX_THROWS || last_round.first == STRIKE_VALUE
         round[player] << [pins]
       else
         last_round << pins

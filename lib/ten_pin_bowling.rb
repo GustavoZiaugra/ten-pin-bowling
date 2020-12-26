@@ -9,7 +9,7 @@ require 'ten_pin_bowling/runner'
 module TenPinBowling
   MAX_ROUNDS = 10
   STRIKE_VALUE = 10
-  NON_FINAL_ROUND_MAX_PLAYS = 2
+  NON_FINAL_ROUND_MAX_THROWS = 2
   VALID_PINS_SCORES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'F'].freeze
 
   class Error < StandardError; end
@@ -29,7 +29,7 @@ module TenPinBowling
 
     def help
       puts <<~HEREDOC
-        TenPinBowling - A CLI for Ten Pin Bowling score processing!."
+        TenPinBowling - A CLI for Ten Pin Bowling score processing!"
         ------------------------------"
         Usage:
           bundle exec exe/ten_pin_bowling input.txt
