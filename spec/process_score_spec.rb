@@ -58,4 +58,35 @@ RSpec.describe TenPinBowling::ProcessScore do
       )
     end
   end
+
+  describe '#strike?' do
+    it 'should return false if pins.count < 10' do
+      expect(TenPinBowling::ProcessScore.strike?(7)).to be_falsey
+    end
+
+    it 'should return true if pins.count >= 10' do
+      expect(TenPinBowling::ProcessScore.strike?(10)).to be_truthy
+    end
+  end
+
+  describe '#last_round?' do
+    it 'should return true if index + 1 == 10' do
+      expect(TenPinBowling::ProcessScore.last_round?(7)).to be_falsey
+    end
+
+    it 'should return false if index + 1 != 10' do
+      expect(TenPinBowling::ProcessScore.last_round?(9)).to be_truthy
+    end
+  end
+
+  describe '#split?' do
+    it 'should return false when round.count != 2 and the sum of the round score is != 10' do
+      round = [1]
+      expect(TenPinBowling::ProcessScore.split?(round)).to be_falsey
+    end
+    it 'should return false when round.count == 2 and the sum of the round score is == 10' do
+      round = [2, 8]
+      expect(TenPinBowling::ProcessScore.split?(round)).to be_truthy
+    end
+  end
 end
