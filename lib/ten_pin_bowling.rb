@@ -32,7 +32,7 @@ module TenPinBowling
         TenPinBowling - A CLI for Ten Pin Bowling score processing!"
         ------------------------------"
         Usage:
-          bundle exec exe/ten_pin_bowling input.txt
+          bundle exec exe/ten_pin_bowling spec/fixtures/sample_match.txt
       HEREDOC
     end
   end

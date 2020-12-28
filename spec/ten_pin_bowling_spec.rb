@@ -12,7 +12,7 @@ RSpec.describe TenPinBowling::CLI do
       it "should return the help when #{option} is sent as params" do
         result = capture_stream($stdout) { TenPinBowling::CLI.new.main(option) }
         # rubocop:disable Layout/LineLength
-        expect(result).to eq("TenPinBowling - A CLI for Ten Pin Bowling score processing!\"\n------------------------------\"\nUsage:\n  bundle exec exe/ten_pin_bowling input.txt\n")
+        expect(result).to eq("TenPinBowling - A CLI for Ten Pin Bowling score processing!\"\n------------------------------\"\nUsage:\n  bundle exec exe/ten_pin_bowling spec/fixtures/sample_match.txt\n")
         # rubocop:enable Layout/LineLength
       end
     end
