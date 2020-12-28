@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TenPinBowling
-  # Class responsible to print the result of the fully match.
+  # Class responsible for printing the result of the fully match.
   class Printer
     def self.print(final_result)
       print_header

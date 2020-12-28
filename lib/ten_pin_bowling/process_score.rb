@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TenPinBowling
-  # This class is responsible to process and agregate all rounds scores.
+  # This class is responsible for processing and aggregating all rounds scores.
   class ProcessScore
     def self.process(parsed_file)
       final_result = parsed_file.keys.each_with_object({}) do |player, game_result|

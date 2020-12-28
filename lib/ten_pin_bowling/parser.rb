@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TenPinBowling
-  # This class is responsible to parse our input file to a struct.
+  # This class is responsible for parsing our input file to a struct.
   class Parser
     def self.parse_file(file_path)
       data_file = File.readlines(file_path).map(&:split)
