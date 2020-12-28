@@ -11,8 +11,6 @@ gem 'rspec', '~> 3.0'
 
 gem 'rubocop', '~>1.6'
 
-gem 'thor', '~> 1.0.1'
-
 gem 'pry', '~> 0.13.1'
 
 gem 'coveralls', require: false
